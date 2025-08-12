@@ -1,0 +1,217 @@
+ /* This is where I design and debug my code using Copilot and Claude */
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            background: radial-gradient(circle at 75% 40%, #23241e 0%, #23241e 35%, #e0e3e5 65%, #e0e3e5 100%);
+            position: relative;
+            overflow: hidden;
+            font-family: "EB Garamond", serif;
+        }
+
+        .accent-bar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 8px;
+            height: 100%;
+        }
+
+        .moon {
+            position: fixed;
+            right: 3%;
+            top: 30%;
+            transform: translateY(-50%);
+            width: 420px;
+            height: 420px;
+            background-image: url('icon/moon.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: breathe 7s ease-in-out infinite;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cloud1 {
+            position: fixed;
+            right: 15%;
+            top: 25%;
+            width: 400px;
+            height: 240px;
+            background-image: url('cloud/cloud1.webp');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: float1 20s ease-in-out infinite;
+            z-index: 2;
+            opacity: 0.7;
+            cursor: pointer;
+        }
+
+        .cloud2 {
+            position: fixed;
+            right: 1%;
+            top: 43%;
+            width: 360px;
+            height: 200px;
+            background-image: url('cloud/cloud2.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: float2 25s ease-in-out infinite;
+            z-index: 2;
+            opacity: 0.6;
+            cursor: pointer;
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: translateY(-50%) scale(1); }
+            50% { transform: translateY(-50%) scale(1.10); }
+        }
+
+        @keyframes float1 {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px);
+            }
+            25% {
+                transform: translateY(-10px) translateX(5px);
+            }
+            50% {
+                transform: translateY(-5px) translateX(-3px);
+            }
+            75% {
+                transform: translateY(-15px) translateX(2px);
+            }
+        }
+
+        @keyframes float2 {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px);
+            }
+            33% {
+                transform: translateY(-8px) translateX(-4px);
+            }
+            66% {
+                transform: translateY(-12px) translateX(6px);
+            }
+        }
+
+        .content {
+            position: absolute;
+            left: 10%;
+            top: 55%;
+            color: #23241e;
+            max-width: 250px;
+            font-family: "EB Garamond", serif;
+            font-size: 15px;
+            transition: all 0.5s ease;
+        }
+
+        .content.letter {
+            max-width: 500px;
+            font-size: 17px;
+            line-height: 1.8;
+            opacity: 0.9;
+            top: 15%;
+            left: 5%;
+            height: 80vh;
+            overflow-y: auto;
+            padding-right: 20px;
+        }
+
+        .letter-content p {
+            margin-bottom: 1em;
+        }
+
+        .letter-content em {
+            font-style: italic;
+        }
+
+        .content.letter::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .content.letter::-webkit-scrollbar-track {
+            background: rgba(35, 36, 30, 0.1)
+        }
+
+        .content.letter::-webkit-scrollbar-thumb {
+            background: rgba(35, 36, 30, 0.3);
+            border-radius: 2px;
+        }
+
+        .title {
+            font-weight: 500;
+            margin-bottom: 2rem;
+            text-transform: lowercase;
+            letter-spacing: 3px;
+            font-family: "EB Garamond", serif;
+        }
+
+        .description {
+            line-height: 2;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        .letter-content {
+            display: none;
+        }
+
+        .letter-content.show {
+            display: block !important;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .original-content.hide {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+
+        @keyframes slideIn {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes rotateShape {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+                .next-page-btn {
+            margin-top: 3rem;
+            padding: 12px 24px;
+            background: transparent;
+            color: #23241e;
+            font-family: "EB Garamond", serif;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            border: 1px solid rgba(35, 36, 30, 0.3);
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: lowercase;
+            display: inline-block;
+        }
+
+        .next-page-btn:hover {
+            background: rgba(35, 36, 30, 0.05);
+            border-color: rgba(35, 36, 30, 0.5);
+            transform: translateY(-1px);
+        }
+
+        .next-page-btn:active {
+            transform: translateY(0);
+        }

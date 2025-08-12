@@ -1,0 +1,567 @@
+/* This is where I design and debug my code using Copilot and Claude */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "EB Garamond", serif;
+}
+
+
+.sky {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background: #23241e;
+    transform: scale(1);
+    z-index: 1;
+}
+
+
+.stars {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    transition: all 10s linear;
+}
+
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #fff68d;
+    opacity: 0.8;
+}
+
+.blink {
+    animation: blink ease-in-out infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.3;
+    }
+}
+
+.star-0 {
+    height: 0.5px;
+    width: 0.5px;
+}
+
+.star-1 {
+    height: 1px;
+    width: 1px;
+}
+
+.star-2 {
+    height: 1.5px;
+    width: 1.5px;
+}
+
+.star-3 {
+    height: 2px;
+    width: 2px;
+}
+
+.star-4 {
+    height: 2.5px;
+    width: 2.5px;
+    box-shadow: 0px 0px 6px 1px rgba(255,246,141,0.5);
+}
+
+.star-5 {
+    height: 2.5px;
+    width: 2.5px;
+    box-shadow: 0px 0px 6px 1px rgba(255,246,141,0.6);
+}
+
+.stars-cross {
+    position: absolute;
+    top: 10vh;
+    left: 0px;
+    width: 120vw;
+    height: 20vh;
+    transform: rotate(20deg);
+    transform-origin: top left;
+}
+
+.stars-cross-aux {
+    position: absolute;
+    top: 0vh;
+    left: 10vw;
+    width: 120vw;
+    height: 10vh;
+    transform: rotate(20deg);
+    transform-origin: top left;
+}
+
+.stars-cross > .blur, .stars-cross-aux > .blur {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #fff68d;
+    opacity: 0.3;
+    filter: blur(15px);
+    width: 5px;
+    height: 10px;
+}
+
+.floating-icon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    z-index: 10;
+    animation: playfulMove 20s linear infinite;
+    transition: transform 0.3s ease;
+    top: 20%;
+    left: 10%;
+}
+
+.floating-icon:hover {
+    transform: scale(1.2);
+    animation-play-state: paused;
+}
+
+.svg-icon {
+    background-image: url('icon/1.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@keyframes playfulMove {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    10% {
+        transform: translate(15vw, 8vh) rotate(36deg);
+    }
+    20% {
+        transform: translate(35vw, -5vh) rotate(72deg);
+    }
+    30% {
+        transform: translate(60vw, 15vh) rotate(108deg);
+    }
+    40% {
+        transform: translate(45vw, 35vh) rotate(144deg);
+    }
+    50% {
+        transform: translate(20vw, 40vh) rotate(180deg);
+    }
+    60% {
+        transform: translate(70vw, 25vh) rotate(216deg);
+    }
+    70% {
+        transform: translate(80vw, 50vh) rotate(252deg);
+    }
+    80% {
+        transform: translate(25vw, 60vh) rotate(288deg);
+    }
+    90% {
+        transform: translate(5vw, 30vh) rotate(324deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+.intro-text-container {
+   position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 800px;
+    background-color: #fefa89;
+    background-image: url("background/pattern.png");
+    padding: 40px;
+    z-index: 200;
+    display: none;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border-color: #000000;
+    border-width: 3px;
+    border-style:double
+}
+
+.intro-text-container.show {
+    display: block;
+}
+
+.intro-text {
+    color: black;
+    font-family: "EB Garamond", serif;
+    font-size: 18px;
+    line-height: 1.8;
+    font-weight: 400;
+    min-height: 300px;
+}
+
+.video-container {
+    position: relative;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 1000px;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4)) drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+    padding: 32px;
+    z-index: 100;
+    display: none;
+    margin-bottom: 50px;
+}
+
+.video-container.show {
+    display: block;
+}
+
+.video-container video {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.image-series-container {
+    position: relative;
+    width: 98%;
+    max-width: 1000px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 40px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    display: none;
+    z-index: 100;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4)) drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+}
+
+.image-series-container.show {
+    display: block;
+}
+
+.image-content {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    color: whitesmoke;
+    font-family: "EB Garamond", serif;
+    
+}
+
+.image-content img {
+    width: 450px;
+    height: 300px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #4c4d4f;
+    border: 2px solid #a2a3a5;
+    left: 50%;
+}
+
+.image-content img:hover {
+    transform: scale(1.02);
+    border-color: #e0e3e5;
+    box-shadow: 0 8px 32px rgba(193,141,75,0.2);
+}
+
+.image-text {
+    flex: 1;
+    font-size: 20px;
+    line-height: 1.6;
+    font-weight: 400;
+    color: white;
+    text-shadow: #23241e;
+}
+
+.image-text em{
+    flex: 1;
+    font-size: 15px;
+    line-height: 1.6;
+    font-weight: 200;
+    color: white;
+    text-shadow: #23241e;
+}
+
+.image-counter {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    color: whitesmoke;
+    text-shadow: #23241e;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.letter-container {
+    position: relative;
+    width: 98%;
+    max-width: 1000px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 40px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    display: none;
+    z-index: 100;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4)) drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+}
+.letter-container.show {
+    display: block;
+}
+
+.letter-content {
+    position: static;
+    width: 100%;
+    left: auto;
+    transform: none;
+    background: rgba(35,36,30,0.95);
+    padding: 40px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    display: none;
+    color: #e0e3e5;
+    font-family: "EB Garamond", serif;
+    font-size: 18px;
+    line-height: 1.7;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    z-index: 100;
+    
+}
+
+.letter-content.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.letter-content strong {
+    color: #fff68d;
+    font-weight: 600;
+}
+
+.letter-content em {
+    color: #a2a3a5;
+    font-style: italic;
+}
+
+.letter-content p {
+    margin-bottom: 20px;
+}
+
+.show-images-btn, .loading-fragment-btn, .next-page-btn {
+    position: relative;
+    width: 100%;
+    background: transparent;
+    background-image: url("background/pattern.png");
+    border: 1px solid #e0e3e5;
+    color: #e0e3e5;
+    padding: 16px 24px;
+    cursor: pointer;
+    font-family: "EB Garamond", serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(10px);
+    display: none;
+    letter-spacing: 0.5px;
+}
+
+.show-images-btn.show, .loading-fragment-btn.show, .next-page-btn.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.show-images-btn:hover, .loading-fragment-btn:hover, .next-page-btn:hover {
+    background: rgba(224,227,229,0.1);
+    background-image: url("background/pattern.png");
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .video-container, .image-series-container, .letter-container, .intro-text-container {
+        width: 95%;
+        padding: 24px;
+    }
+    
+    .image-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .image-content img {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .floating-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .floating-icon::before {
+        font-size: 20px;
+    }
+
+    .intro-text {
+        font-size: 16px;
+    }
+}
+
+
+.clouds-container {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100vw;
+    height: 400px; 
+    z-index: 5;
+    overflow: hidden;
+}
+
+.cloud {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(1.1) contrast(0.9);
+}
+
+/* BACKGROUND LAYER - Largest, most distant clouds */
+.cloud-1 {
+    bottom: 30px;
+    left: -12vw; 
+    width: 60vw; 
+    height: 200px; 
+    background-image: url('cloud/1.png');
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.cloud-2 {
+    bottom: 25px;
+    right: -13vw; 
+    width: 55vw; 
+    height: 180px; 
+    background-image: url('cloud/2.png');
+    opacity: 0.7;
+    z-index: 1;
+}
+
+/* MIDDLE LAYER - Medium clouds for depth */
+.cloud-3 {
+    bottom: 45px;
+    left: 17vw; 
+    width: 45vw; 
+    height: 150px; 
+    background-image: url('cloud/3.png');
+    opacity: 0.8;
+    z-index: 2;
+}
+
+.cloud-4 {
+    bottom: 40px;
+    left: 47vw; 
+    width: 45vw; 
+    height: 150px; 
+    background-image: url('cloud/4.png');
+    opacity: 0.8;
+    z-index: 2;
+}
+
+/* FOREGROUND LAYER - Closest, most visible clouds */
+.cloud-5 {
+    bottom: 55px;
+    left: 25vw; 
+    width: 50vw; 
+    height: 130px; 
+    background-image: url('cloud/5.png');
+    opacity: 0.85;
+    z-index: 3;
+}
+
+.cloud-6 {
+    bottom: 60px;
+    right: 15vw; 
+    width: 56vw; 
+    height: 120px; 
+    background-image: url('cloud/6.png');
+    opacity: 0.85;
+    z-index: 3;
+}
+
+
+@keyframes cloudFloat {
+    0%, 100% {
+        transform: translateX(0) translateY(0);
+    }
+    25% {
+        transform: translateX(8px) translateY(-3px);
+    }
+    50% {
+        transform: translateX(-5px) translateY(4px);
+    }
+    75% {
+        transform: translateX(6px) translateY(-2px);
+    }
+}
+
+/* Enhanced atmospheric glow */
+.clouds-container::before {
+    content: '';
+    position: absolute;
+    bottom: 0px; 
+    left: 0;
+    width: 100%;
+    height: 250px; 
+    background: linear-gradient(to top, 
+        rgba(254, 250, 137, 0.15) 0%,
+        rgba(254, 250, 137, 0.08) 40%,
+        rgba(254, 250, 137, 0.03) 70%,
+        transparent 100%);
+    z-index: 0;
+}
+
+/* Fine-tuned responsive adjustments */
+@media (max-width: 768px) {
+    .clouds-container {
+        height: 300px;
+        bottom: 0px; 
+    }
+    
+    /* Background clouds */
+    .cloud-1, .cloud-2 {
+        width: 70vw; 
+        height: 140px; 
+        bottom: 35px;
+    }
+    
+    /* Middle layer clouds */
+    .cloud-3, .cloud-4 {
+        width: 55vw; 
+        height: 110px; 
+        bottom: 55px;
+    }
+    
+    /* Foreground clouds */
+    .cloud-5, .cloud-6 {
+        width: 45vw; 
+        height: 90px; 
+        bottom: 75px;
+    }
+}
+
+.clouds-storm .cloud {
+    filter: brightness(0.8) contrast(1.3) saturate(0.6);
+    opacity: 0.9;
+}

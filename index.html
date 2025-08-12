@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your journey is not normal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="dark-overlay" id="darkOverlay"></div>
+
+        <div class="intro-container" id="introContainer">
+            <p>ask</p>
+            <p>the</p>
+            <p>young</p>
+            <p>girl</p>
+            <p>to</p>
+            <p>guide</p>
+            <p>your</p>
+            <p>journey</p>
+        </div>
+
+        <div class="conversation-box" id="conversationBox">
+            <p id="conversationText">Hi! Have you seen the <b>sun</b> and <b>moon</b> dancing around yet? If not, continue clicking to light up the dark.</p>
+        </div>
+        
+        <div class="floating-icon sun-icon" id="sunIcon" onclick="goToPage1()"></div>
+        <div class="floating-icon moon-icon" id="moonIcon" onclick="showTextSection()"></div>
+        <div class="floating-icon compass-icon" id="compassIcon" onclick="showRefPopup()"></div>
+        
+        <div class="section" id="text">
+            <button class="section-close" onclick="closeTextSection()">×</button>
+            <h1>The broken system.</h1>
+            <p>Have you ever wondered who really controls the internet? Why most of what we read comes from a handful of companies or is locked behind expensive paywalls? Why stories passed down in families or learned from lived experience rarely "count" as real knowledge?</p>
+            <p>What if there was another way - where information wasn't owned, ranked, or sold, but shared?</p>
+            <h1>A radical alternative.</h1>
+            <p>The Archive of the After is a global network of memory, stored across libraries, schools, local servers, and even personal devices. You visit it in person or online, not to scroll endlessly, but to experience knowledge: seeing, hearing, and feeling it in context. Anyone can add to it, as long as they share where it came from and how it should be used. No algorithms. No trending tabs. Just what matters, what's endangered, and what's worth remembering.</p>
+            <p>It's not perfect, and will never be. </p>
+            <h1>How it happens.</h1>
+            <p>The Archive's roots stretch back to the 2020s, when pirate libraries, USB chains, and community servers quietly resisted the grip of paywalls, algorithms, and political filtering. Students in Southeast Asia where survival often depended on pirated files, oral histories, and community knowledge ignored by official channels. They questioned why "valid" knowledge had to come from expensive, peer-reviewed journals while lived experience was dismissed.</p>
+            <p>By the early 2030s, these quiet resistances spread across the region until a viral student post in 2033 <em>"Why trust Google Scholar but not Wikipedia?"</em> turned frustration into a movement. Institutions fought back, but in 2036 a massive server crash erased decades of academic research, making the Archive indispensable. By the 2040s, copyright had been replaced by consent, guided by rotating councils of librarians, elders, and students.</p>
+            <h1>The unfinished question.</h1>
+            <p>The Archive was born not just from technology, but from the refusal to let knowledge be owned. Today, the Archive is part of everyday life. Yet it remains unfinished, unowned, and quietly provocative - always leaving us with the question: <em>What's worth remembering?</em></p>
+            <space>.</space>
+            <space>.</space>
+            <space>.</space>
+        </div>
+    </div>
+    
+    <div class="popup-overlay" id="refPopup">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closeRefPopup()">×</button>
+            <h1>References</h1>
+            <p>The Google Knowledge Graph: Information gatekeeper or a force to be reckoned with?. <i>Strategic Directio</i> 4 March 2014; 30 (4): 15–17. </p>
+        
+            <p>Juel Vang, K., 2013. Ethics of Google's Knowledge Graph: some considerations. <i>Journal of Information, Communication and Ethics in Society</i>, 11(4), pp.245-260.</p>
+            
+            <p>Kizhner, I., Terras, M., Rumyantsev, M., Khokhlova, V., Demeshkova, E., Rudov, I. and Afanasieva, J., 2021. Digital cultural colonialism: measuring bias in aggregated digitized content held in Google Arts and Culture. <i>Digital Scholarship in the Humanities</i>, 36(3), pp.607-640.</p>
+            
+            <p>Meagher, K., 2021. Introduction: the politics of open access—decolonizing research or corporate capture?. <i>Development and Change</i>, 52(2), pp.340-358.</p>
+            
+            <p>Rausing, L., 2010. Do Libraries Dream of Electric Sheep?. <i>Logos</i>, 21(3-4), pp.20-30.</p>
+
+            <h1>Guide - only for lost and confused ones ^^ </h1>
+            <h2>Index page</h2>
+            <p>Click on the girl → Opens the introduction.</p>
+            <p>Click on the compass → Shows references and this guide.</p>
+            <p>Click on the moon → Opens the world-building section.</p>
+            <p>Click on the sun → Takes you to the start of the story.</p>
+
+            <h2>Page 1</h2>
+            <p>Click on the star → Plays the narrator’s voice.</p>
+            <p>Inside the Archive:
+            <p>Watch the video of the main character using the Archive for the first time.</p>
+            <p>Read the short comic of the main character inside the Archive.</p>
+            <p>Unlock the first fragment → A letter from the past.</p>
+
+            <h2>Page 2</h2>
+            <p>Second fragment unlocked → Watch the interview video.</p>
+            <p>Listen to the narrator’s voice explaining how both fragments affect the main character.</p>
+
+            <h2>Page 3</h2>
+            <p>Click on the moon → Read the main character’s reply to the letter from the past.</p>
+            <p>End of the Journey: That’s the end of the experience.</p>
+        </div>
+    </div>
+    
+    <div class="image-container">
+        <div class="glow-circle" id="glowCircle"></div>
+        <img src="image/9.PNG" alt="Center Image" class="center-image" id="centerImage" onclick="handleImageClick()">
+    </div>
+</body>
+ </html>

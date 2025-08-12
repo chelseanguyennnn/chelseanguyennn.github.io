@@ -1,0 +1,44 @@
+<!-- This is where I design and debug my code using Copilot and Claude -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="2.css">
+    <script src="2.js" defer></script>
+</head>
+<body>
+    <canvas id="grassCanvas"></canvas>
+    <img class="image" src="image/9.PNG" id="image" alt="image">
+    
+    <div class="intro-container" id="introContainer">
+        <p>she is here again,</p>
+        <p>to guide us</p>
+        <p><i>note: click the girl twice, then click the video if it doesn’t autoplay.</i></p>
+    </div>
+
+    <div class="content" id="content">
+        <h1>"There's something else besides the letter."</h1>
+        <h2>"An... interview video?"</h2>
+    </div>
+
+    <!-- FIXED: Safari-friendly attributes WITH sound -->
+    <div class="video-container" id="videoContainer">
+        <video id="videoPlayer" preload="metadata" playsinline webkit-playsinline>
+            <source src="video/2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <video id="videoPlayer2" preload="metadata" playsinline webkit-playsinline style="display: none;">
+            <source src="video/3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</body>
+
+</html>

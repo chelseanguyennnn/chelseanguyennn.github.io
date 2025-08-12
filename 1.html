@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="1.css">
+    <script src="1.js" defer></script>
+</head>
+<body>
+ <div class="sky">
+<div class="clouds-container">
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="cloud cloud-4"></div>
+    <div class="cloud cloud-5"></div>
+    <div class="cloud cloud-6"></div>
+</div>
+        <div class="stars"></div>
+        <div class="stars-cross"></div>
+        <div class="stars-cross-aux"></div>
+        <div class="floating-icon svg-icon" id="floatingIcon"></div>
+    </div>
+
+    <div class="intro-text-container" id="introTextContainer">
+        <div class="intro-text" id="introText"></div>
+    </div>
+
+    <div class="video-container" id="videoContainer">
+        <video id="videoPlayer" controls>
+            <source src="video/1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button class="show-images-btn" id="showImagesBtn">What happens inside The Archive?</button>
+    </div>
+
+    <div class="image-series-container" id="imageSeriesContainer">
+        <div class="image-counter">
+            <span id="currentImage">1</span> / <span id="totalImages">7</span>
+        </div>
+        <div class="image-content">
+            <img id="seriesImage" src="image/1.PNG" alt="Series Image" onerror="handleImageError(this)">
+            <div class="image-text" id="imageText">
+                <p>Inside the Archive feels like a game interface - floating objects and pieces of knowledge drift through the space. The most captivating feature is a running clock or compass, spinning elegantly as part of the decor. A monitor board stands in the center, where you can search for any kind of knowledge you wish to learn.</p>
+                <p><em> Click on the image to get to the next one </em></p>
+            </div>
+        </div>
+  
+        <div class="loading-fragment-btn" id="loadingFragmentBtn">
+            Loading letter . . .
+        </div>
+    </div>
+ 
+    <div class="letter-container" id="letterContainer">
+    <div class="letter-content" id = "letterContent">
+        <p><strong>Hello there,</strong></p>
+        
+        <p>First of all, I'm so glad you found this letter. Honestly, I was afraid it might stay hidden forever in this forgotten corner of the building. I wonder what year it is where you are. Over here, it's 2032, a time of political uncertainty and rapid change, especially in technology.</p>
+        
+        <p>Can you imagine walking outside and seeing the real world blend seamlessly with a virtual one? That's where we are now. Half my day is spent living offline, the other half inside this fascinating digital layer we call VR. Everyone's still getting used to it. I finally understand how our grandparents must have felt when they first discovered the internet. But enough about me. I'm writing because I have a few questions for you about the future.</p>
+        
+        <p>Have countries stopped fighting each others? Is the economy easier to live with now? Which music group is popular where you are? (Back in my time, we had BLACKPINK from Korea!)</p>
+        
+        <p>Do you think AI will ever rule the world? (Probably not, since you're still here reading this ^^!)</p>
+        
+        <p>And students like us, have we escaped the boring, mechanical routines of university life? Are you still writing essays and reports? Or have you found better ways to learn?</p>
+        
+        <p>One last thing. Right now, my friends and I are building a kind of tech-based community. Do you know the Internet Archive? It's similar but ours goes beyond copyright laws! I want to create a space for creative work that doesn't fit into traditional publishing houses or academic systems. So far, over a million people have joined. We hope this Archive gives students like us the freedom to create and contribute without being boxed in by capitalism <em>(*shh!*)</em>.</p>
+        
+        <p>I wonder where this project will end up. Maybe it doesn't exist in your time anymore, and that's okay too. The more important thing is that we tried. And if anything I've said speaks to you, maybe you'll start something new, too.</p>
+        
+        <p>Thank you for reading all the way to the end. It means a lot to know someone is listening. Wishing you a good day, a kind year, and a meaningful life.</p>
+        
+        <p><em>P/S: If you feel like replying back, here's my contact: IB9283N02J</em></p>
+        
+        <p><strong>With care,</strong><br><em>CN</em></p>
+    </div>
+    <button class="next-page-btn" id="nextPageBtn" onclick="goToPage2()">
+    There is something else besides the letter. What is it?
+    </button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background: #e0e3e5;
+            position: relative;
+            overflow: hidden;
+            font-family: "EB Garamond", serif;
+        }
+        .content {
+            position: relative;
+            color: #23241e;
+            font-size: 20px;
+            line-height: 1.5;
+            font-weight: 300;
+            text-align: center;
+            top:30%;
+            padding: 20px;
+        }
